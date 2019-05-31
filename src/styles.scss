@@ -1,0 +1,103 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+/* 右上へ移動 */
+@keyframes slide_rt {
+  from {
+    bottom: -16px;
+    left: -16px;
+  }
+  to {
+    bottom: calc(100% - 16px);
+    left: calc(100% - 16px);
+  }
+}
+
+/* 左上へ移動 */
+@keyframes slide_lt {
+  from {
+    bottom: -16px;
+    right: -16px;
+  }
+  to {
+    bottom: calc(100% - 16px);
+    right: calc(100% - 16px);
+  }
+}
+
+/* 右下へ移動 */
+@keyframes slide_rb {
+  from {
+    top: -16px;
+    left: -16px;
+  }
+  to {
+    top: calc(100% - 16px);
+    left: calc(100% - 16px);
+  }
+}
+
+/* 左下へ移動 */
+@keyframes slide_lb {
+  from {
+    top: -16px;
+    right: -16px;
+  }
+  to {
+    top: calc(100% - 16px);
+    right: calc(100% - 16px);
+  }
+}
+
+@keyframes fadein {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes fadeout {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+
+.balloon {
+  top: -50px;
+  position: absolute;
+  width: 80px; /* マーカーサイズ32px + 追加分48px */
+  left: -24px; /* 追加分の-1/2 */
+  height: 30px;
+  background-color: #9ac0fc;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: sans-serif;
+  z-index: 1003;
+}
+.balloon:before {
+  content: "";
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 15px solid transparent;
+  z-index: 1005;
+  left: calc(50% - 8px);
+  top: 30px;
+  border-top: 15px solid #9ac0fc;
+}
+.balloon:after {
+  content: "";
+  position: absolute;
+  border-top: 16px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 16px solid transparent;
+  z-index: 1004;
+  left: calc(50% - 8px);
+  top: 31px;
+  border-top-color: #000;
+}
